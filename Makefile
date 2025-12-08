@@ -1,22 +1,26 @@
-# ================
-# Docker Commands
-# ================
+# =====================
+# Docker Compose (Frontend Dev)
+# =====================
 
-build:
-	docker build -t pokebinder-frontend .
+dev-docker:
+	docker compose up
 
-run:
-	docker run -p 3000:80 --name pokebinder-frontend pokebinder-frontend
+dev-docker-build:
+	docker compose up --build
 
-stop:
-	docker stop pokebinder-frontend || true
-	docker rm pokebinder-frontend || true
+dev-docker-down:
+	docker compose down
 
-rebuild: stop build run
+# Force rebuild without cache (optional)
+dev-docker-rebuild:
+	docker compose build --no-cache && docker compose up
 
-# ================
-# Local Commands
-# ================
+restart:
+	docker compose down && docker compose up
+
+# =====================
+# Local Development (No Docker)
+# =====================
 
 dev:
 	npm run dev
@@ -29,16 +33,3 @@ lint-fix:
 
 test:
 	npm run test
-
-# ================
-# Docker Compose Commands (Development)
-# ================
-
-dev-docker:
-	docker compose up
-
-dev-docker-build:
-	docker compose build
-
-dev-docker-down:
-	docker compose down
