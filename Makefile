@@ -29,3 +29,16 @@ lint-fix:
 
 test:
 	npm run test
+
+# ================
+# Docker Compose Commands (Development)
+# ================
+
+dev-docker:
+	docker compose up
+
+dev-docker-build:
+	docker compose build
+
+dev-docker-down:
+	docker compose down
