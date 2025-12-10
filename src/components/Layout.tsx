@@ -1,19 +1,21 @@
 import { ReactNode } from "react";
 
-interface LayoutProps {
+type LayoutProps = {
   children: ReactNode;
-}
+  className?: string;
+};
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children, className }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
-      {/* Top Navbar */}
-      <header className="bg-red-600 text-white p-4 shadow-md">
-        <h1 className="text-xl font-bold">PokéBinder</h1>
-      </header>
-
-      {/* Page content */}
-      <main className="max-w-4xl mx-auto p-4">{children}</main>
+    <div className={`min-h-screen w-full flex justify-center bg-[#F6F8FC]`}>
+      <main
+        className={`
+          w-full max-w-[1440px] px-4 sm:px-6 lg:px-8 
+          ${className || ""}
+        `}
+      >
+        {children}
+      </main>
     </div>
   );
 }
