@@ -1,3 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga", "kern";
+}
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
