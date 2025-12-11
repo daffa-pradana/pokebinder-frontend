@@ -1,10 +1,10 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
-export default function Register() {
+export default function LoginPage() {
   return (
     <Layout>
       <section className="flex flex-col items-center justify-center min-h-screen">
-        {/* Register form here */}
+        {/* Login form here */}
       </section>
     </Layout>
   );

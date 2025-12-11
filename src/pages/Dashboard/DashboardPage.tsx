@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
-export default function Dashboard() {
+export default function DashboardPage() {
   return (
     <Layout>
       <section className="pt-6 pb-10">
