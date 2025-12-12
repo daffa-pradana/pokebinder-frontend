@@ -1,3 +1,6 @@
+import Card from "../../components/Card";
+import { pokemoncards } from "../../data/pokemoncards";
+
 export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-[#ffffff]-50 text-gray-800 font-sans">
@@ -66,26 +69,11 @@ export default function DashboardPage() {
 
             {/* Card Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-              {/* Example Card 1 */}
-              <div className="bg-white p-2 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                 <div className="w-full aspect-[2.5/3.5] bg-gray-200 rounded-lg mb-2"></div>
-                 <div className="text-center font-medium text-sm">Umbreon EX</div>
-              </div>
-               {/* Example Card 2 */}
-               <div className="bg-white p-2 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                 <div className="w-full aspect-[2.5/3.5] bg-gray-200 rounded-lg mb-2"></div>
-                 <div className="text-center font-medium text-sm">Flareon GX</div>
-              </div>
-               {/* Example Card 3 */}
-               <div className="bg-white p-2 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                 <div className="w-full aspect-[2.5/3.5] bg-gray-200 rounded-lg mb-2"></div>
-                 <div className="text-center font-medium text-sm">Pikachu</div>
-              </div>
-               {/* Example Card 4 */}
-               <div className="bg-white p-2 rounded-xl shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                 <div className="w-full aspect-[2.5/3.5] bg-gray-200 rounded-lg mb-2"></div>
-                 <div className="text-center font-medium text-sm">Charizard</div>
-              </div>
+              {
+                pokemoncards.map((card) => (
+                  <Card key={card.id} card={card} />
+                ))
+              }
             </div>
           </div>
 
