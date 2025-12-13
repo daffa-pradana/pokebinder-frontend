@@ -9,7 +9,7 @@ export default function Card({ card, onClick, className }: CardProps) {
       <img
         src={card.imageUrl}
         alt={card.name}
-        className="w-full aspect-[2.5/3.5] bg-gray-200 rounded-lg mb-2"
+        className="w-full aspect-[2.5/3.5] bg-gray-200 rounded-lg"
       />
     </div>
   );

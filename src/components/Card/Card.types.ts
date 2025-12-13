@@ -1,4 +1,3 @@
-// src/components/Card/Card.types.ts
 import { PokemonCard } from "../../types/pokemoncard";
 
 export interface CardProps {

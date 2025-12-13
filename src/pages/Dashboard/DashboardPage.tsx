@@ -1,5 +1,11 @@
+// Components
 import Card from "../../components/Card";
+import Header from "../../components/Header/Header";
+import UserStats from "../../components/UserStats/UserStats";
+
+// Data
 import { pokemoncards } from "../../data/pokemoncards";
+import { userstats } from "../../data/userstats";
 
 export default function DashboardPage() {
   return (
@@ -7,34 +13,12 @@ export default function DashboardPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {/* HEADER */}
-        <header className="flex justify-between items-center bg-white rounded-2xl shadow-sm p-4 mb-6">
-          <div className="font-bold text-xl text-pokebinder-red">PokeBinder</div>
-          <div className="w-10 h-10 bg-gray-200 rounded-full"></div> {/* Placeholder Avatar */}
-        </header>
+        <Header />
 
         {/* STATS & ACTIONS SECTION */}
         <section className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
-          
           {/* Stats (Left) */}
-          <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm p-6 flex justify-around items-center">
-            <div className="flex-1 text-center border-r border-gray-100 last:border-r-0">
-              <div className="text-2xl font-bold">128</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wide">Total Cards</div>
-            </div>
-            <div className="flex-1 text-center border-r border-gray-100 last:border-r-0">
-              <div className="text-2xl font-bold">12</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wide">Sets Collected</div>
-            </div>
-            <div className="flex-1 text-center border-r border-gray-100 last:border-r-0">
-              <div className="text-2xl font-bold">67%</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wide">Completion</div>
-            </div>
-            <div className="flex-1 text-center">
-              <div className="text-2xl font-bold">$ 4010</div>
-              <div className="text-xs text-gray-400 uppercase tracking-wide">Value</div>
-            </div>
-          </div>
-
+          <UserStats key={userstats.id} userStatsData={userstats}/>
           {/* Actions (Right) */}
           <div className="lg:col-span-1 flex gap-4">
             <button className="flex-1 bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors rounded-2xl flex flex-col items-center justify-center p-4">
