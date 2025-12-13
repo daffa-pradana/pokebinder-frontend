@@ -1,102 +1,33 @@
 // Components
-import Card from "../../components/Card";
-import Header from "../../components/Header/Header";
 import UserStats from "../../components/UserStats/UserStats";
+import CardDetails from "../../components/CardDetails";
+import Header from "../../components/Dashboard/Header";
+import Container from "../../components/Dashboard/Container";
+import Section from "../../components/Dashboard/Section";
+import ButtonSection from "../../components/Dashboard/ButtonSection";
+import Button from "../../components/Dashboard/Button";
+import MainSection from "../../components/Dashboard/MainSection";
+import Binder from "../../components/Dashboard/Binder";
 
 // Data
-import { pokemoncards } from "../../data/pokemoncards";
 import { userstats } from "../../data/userstats";
+import { pokemoncard } from "../../data/pokemoncard";
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-[#ffffff]-50 text-gray-800 font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-        {/* HEADER */}
+    <Container>
         <Header />
-
-        {/* STATS & ACTIONS SECTION */}
-        <section className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
-          {/* Stats (Left) */}
+        <Section>
           <UserStats key={userstats.id} userStatsData={userstats}/>
-          {/* Actions (Right) */}
-          <div className="lg:col-span-1 flex gap-4">
-            <button className="flex-1 bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors rounded-2xl flex flex-col items-center justify-center p-4">
-              <span className="font-semibold">Scan Card</span>
-            </button>
-            <button className="flex-1 bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors rounded-2xl flex flex-col items-center justify-center p-4">
-               <span className="font-semibold">Add Card</span>
-            </button>
-          </div>
-        </section>
-
-        {/* MAIN CONTENT SPLIT */}
-        <main className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          {/* LEFT: BINDER CONTENT */}
-          <div className="lg:col-span-8 flex flex-col gap-6">
-            
-            {/* Search Bar */}
-            <div className="bg-white rounded-xl p-2 shadow-sm flex">
-                <input 
-                  type="text" 
-                  placeholder="Search cards..." 
-                  className="w-full bg-transparent p-2 outline-none text-gray-600"
-                />
-            </div>
-
-            {/* Tabs */}
-            <div className="flex gap-4 border-b border-gray-200 pb-2">
-                <button className="text-blue-600 font-medium border-b-2 border-blue-600 pb-2">Cards</button>
-                <button className="text-gray-400 hover:text-gray-600 pb-2">Collections</button>
-            </div>
-
-            {/* Card Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-              {
-                pokemoncards.map((card) => (
-                  <Card key={card.id} card={card} />
-                ))
-              }
-            </div>
-          </div>
-
-          {/* RIGHT: INSPECTOR PANEL (Sticky) */}
-          <aside className="lg:col-span-4">
-            <div className="bg-white rounded-2xl shadow-sm p-6 sticky top-6">
-              
-              {/* Large Card Preview */}
-              <div className="w-3/4 mx-auto aspect-[2.5/3.5] bg-gray-200 rounded-lg mb-6 shadow-inner"></div>
-              
-              <h2 className="text-xl font-bold text-center mb-1">Umbreon EX</h2>
-              <div className="text-center mb-6">
-                <span className="px-3 py-1 bg-gray-800 text-white text-xs rounded-full">Dark</span>
-              </div>
-
-              <div className="space-y-4 text-sm">
-                <div className="flex justify-between py-2 border-b border-gray-50">
-                  <span className="text-gray-400">Illustrator</span>
-                  <span className="font-medium">Yashiro Nanaco</span>
-                </div>
-                <div className="flex justify-between py-2 border-b border-gray-50">
-                  <span className="text-gray-400">Set</span>
-                  <span className="font-medium">Terastal Festival</span>
-                </div>
-                <div className="flex justify-between py-2 border-b border-gray-50">
-                  <span className="text-gray-400">Rarity</span>
-                  <span className="font-medium">SAR</span>
-                </div>
-                 <div className="flex justify-between py-2">
-                  <span className="text-gray-400">Price</span>
-                  <span className="font-medium text-green-600">$175.00</span>
-                </div>
-              </div>
-
-            </div>
-          </aside>
-        </main>
-
-      </div>
-    </div>
+          <ButtonSection>
+            <Button actionName="Scan Card" actionIcon="" />
+            <Button actionName="Add Card" actionIcon="/icons/add-icon.svg" />
+          </ButtonSection>
+        </Section>
+        <MainSection>
+          <Binder/>
+          <CardDetails cardDetail={pokemoncard} />
+        </MainSection>
+    </Container>
   );
 }
