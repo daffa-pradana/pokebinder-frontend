@@ -4,7 +4,7 @@ export const pokemoncard: PokemonCardDetail = {
   id: "01",
   name: "Umbreon EX",
   imageUrl: "https://asia.pokemon-card.com/id/archive/special/card/sv8a/assets/images/card/hero-card-6.png",
-  type: "dark",
+  type: "Dark",
   rarity: "SAR",
   illustrator: "Yashiro Nanaco",
   set: "Terastal Festival",

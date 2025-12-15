@@ -7,7 +7,7 @@ import { pokemoncards } from "../../data/pokemoncards";
 export default function Binder() {
   return (
     <div className="lg:col-span-8 flex flex-col gap-6">
-      <div className="bg-white rounded-xl p-2 shadow-sm flex">
+      <div className="bg-white rounded-xl p-2 shadow-[0px_4px_6px_-2px_rgba(0,0,0,0.1)] flex">
           <input 
             type="text" 
             placeholder="Search cards..." 

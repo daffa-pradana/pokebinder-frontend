@@ -4,10 +4,9 @@ export default function CardDetails({ cardDetail }: CardDetailsProps) {
   return (
     <aside className="lg:col-span-4">
       <div className="bg-white rounded-2xl shadow-sm p-6 sticky top-6">
-        
-        {/* Large Card Preview */}
-        <div className="w-3/4 mx-auto aspect-[2.5/3.5] bg-gray-200 rounded-lg mb-6 shadow-inner"></div>
-        
+        <div className="mx-auto bg-gray-200 rounded-lg mb-6 shadow-inner">
+          <img src="https://asia.pokemon-card.com/id/archive/special/card/sv8a/assets/images/card/hero-card-6.png" />
+        </div>
         <h2 className="text-xl font-bold text-center mb-1">{cardDetail.name}</h2>
         <div className="text-center mb-6">
           <span className="px-3 py-1 bg-gray-800 text-white text-xs rounded-full">{cardDetail.type}</span>
