@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:css": "postcss src/input.css -o src/output.css",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx",
     "lint:fix": "eslint . --ext ts,tsx --fix",
@@ -45,6 +44,7 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "npm:rolldown-vite@7.2.5",
+    "vite-plugin-svgr": "^4.5.0",
     "vitest": "^4.0.15"
   },
   "overrides": {
