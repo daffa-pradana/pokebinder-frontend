@@ -58,7 +58,7 @@ export default function Binder() {
           />
           <button
             onClick={handleResetFilters}
-            className="text-sm text-gray-500 hover:underline"
+            className="text-sm text-gray-500 hover:underline cursor-pointer"
           >
             Reset Filter
           </button>

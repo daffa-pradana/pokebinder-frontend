@@ -58,7 +58,7 @@ export default function FilterDropdown({
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white shadow-sm border border-gray-100 hover:shadow-md transition"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition cursor-pointer"
           aria-expanded={open}
         >
           {/* filter icon */}
@@ -83,12 +83,12 @@ export default function FilterDropdown({
 
       {/* Dropdown panel */}
       {open && (
-        <div className="absolute right-0 mt-2 w-72 bg-white border border-gray-100 rounded-lg shadow-lg z-50 p-3">
+        <div className="absolute left-0 mt-2 w-72 bg-white border border-gray-100 rounded-lg shadow-lg z-50 p-3">
           <div className="flex justify-between items-center mb-2">
             <strong className="text-sm text-gray-800">Filters</strong>
             <button
               onClick={reset}
-              className="text-xs text-red-500 hover:underline"
+              className="text-xs text-red-500 hover:underline cursor-pointer"
             >
               Reset
             </button>
@@ -105,7 +105,7 @@ export default function FilterDropdown({
                     key={t}
                     type="button"
                     onClick={() => toggleOption("types", t)}
-                    className={`px-2.5 py-1 rounded-full text-xs border ${
+                    className={`px-2.5 py-1 rounded-full text-xs border cursor-pointer ${
                       active
                         ? "bg-[#ffefef] border-[#ffb5b4] text-[#c43d3b]"
                         : "bg-white border-gray-100 text-gray-600 hover:bg-gray-50"
@@ -129,7 +129,7 @@ export default function FilterDropdown({
                     key={r}
                     type="button"
                     onClick={() => toggleOption("rarities", r)}
-                    className={`px-2.5 py-1 rounded-full text-xs border ${
+                    className={`px-2.5 py-1 rounded-full text-xs border cursor-pointer ${
                       active
                         ? "bg-[#ffefef] border-[#ffb5b4] text-[#c43d3b]"
                         : "bg-white border-gray-100 text-gray-600 hover:bg-gray-50"
@@ -146,7 +146,7 @@ export default function FilterDropdown({
           <div className="flex justify-end gap-2 pt-2 border-t border-gray-100">
             <button
               onClick={() => setOpen(false)}
-              className="px-3 py-1.5 rounded-md text-sm bg-gray-50 border border-gray-100 hover:bg-gray-100"
+              className="px-3 py-1.5 rounded-md text-sm bg-gray-50 border border-gray-100 hover:bg-gray-100 cursor-pointer"
             >
               Done
             </button>
