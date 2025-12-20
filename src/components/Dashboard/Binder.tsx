@@ -70,9 +70,10 @@ export default function Binder() {
         </div>
       </div>
 
-      <div className="flex gap-4 border-b border-gray-200 pb-2">
-        <button className="text-blue-600 font-medium border-b-2 border-blue-600 pb-2">Cards</button>
-        <button className="text-gray-400 hover:text-gray-600 pb-2">Collections</button>
+      <div className="border-b border-[#D3D3E5] pb-3">
+        <h2 className="text-2xl font-semibold text-gray-800">
+          My Binder
+        </h2>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
