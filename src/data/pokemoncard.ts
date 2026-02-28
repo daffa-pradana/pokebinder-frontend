@@ -5,9 +5,10 @@ export const pokemoncard: PokemonCardDetail = {
   name: "Umbreon EX",
   imageUrl: "https://asia.pokemon-card.com/id/archive/special/card/sv8a/assets/images/card/hero-card-6.png",
   type: "Dark",
-  rarity: "SAR",
+  rarity: "Special Art Rare (SAR)",
   illustrator: "Yashiro Nanaco",
   set: "Terastal Festival",
+  cardNo: "217/187",
   lowestPrice: 100.00,
   marketPrice: 175.00,
   gradedPrice: 300.00
