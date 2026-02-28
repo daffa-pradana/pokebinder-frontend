@@ -18,16 +18,16 @@ export default function CardDetails({ cardDetail }: CardDetailsProps) {
             <span className="text-xs text-gray-400 shrink-0">Card Details</span>
             <div className="flex-1 h-px bg-gray-200" />
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {[
               { label: "Illustrator", value: cardDetail.illustrator },
               { label: "Set", value: cardDetail.set },
               { label: "Rarity", value: cardDetail.rarity },
               { label: "Card No", value: cardDetail.cardNo },
             ].map(({ label, value }) => (
-              <div key={label} className="flex items-center justify-between gap-4">
-                <span className="font-semibold text-gray-700 shrink-0">{label}</span>
-                <span className="bg-gray-100 shadow-inner rounded-lg px-3 py-2 text-gray-600 text-right">
+              <div key={label} className="flex items-center gap-4">
+                <span className="font-semibold text-gray-700 w-24 shrink-0">{label}</span>
+                <span className="flex-1 bg-white border border-gray-200 rounded-xl px-3 py-2 text-gray-600 shadow-inner">
                   {value}
                 </span>
               </div>
@@ -39,15 +39,15 @@ export default function CardDetails({ cardDetail }: CardDetailsProps) {
             <span className="text-xs text-gray-400 shrink-0">Prices</span>
             <div className="flex-1 h-px bg-gray-200" />
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {[
               { label: "Lowest", value: cardDetail.lowestPrice },
               { label: "Market (Average)", value: cardDetail.marketPrice },
               { label: "Highest (Graded)", value: cardDetail.gradedPrice },
             ].map(({ label, value }) => (
-              <div key={label} className="flex items-center justify-between gap-4">
-                <span className="font-semibold text-gray-700 shrink-0">{label}</span>
-                <span className="bg-gray-100 shadow-inner rounded-lg px-3 py-2 text-gray-600">
+              <div key={label} className="flex items-center gap-4">
+                <span className="font-semibold text-gray-700 w-32 shrink-0">{label}</span>
+                <span className="flex-1 bg-white border border-gray-200 rounded-xl px-3 py-2 text-gray-600 shadow-inner">
                   $ {value}
                 </span>
               </div>
