@@ -6,6 +6,7 @@ export interface PokemonCardDetail {
   rarity: string;
   illustrator: string;
   set: string;
+  cardNo: string;
   lowestPrice: number;
   marketPrice: number;
   gradedPrice: number;
