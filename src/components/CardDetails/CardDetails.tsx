@@ -54,7 +54,7 @@ export default function CardDetails({ cardDetail }: CardDetailsProps) {
           <img src="https://asia.pokemon-card.com/id/archive/special/card/sv8a/assets/images/card/hero-card-6.png" />
         </div>
         <h2 className="text-xl font-bold text-center mb-1">{cardDetail.name}</h2>
-        <div className="text-center mb-6">
+        <div className="text-center mb-6 mt-4">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 text-sm rounded-xl" style={typeBadgeStyle}>
             {typeIcon && <img src={typeIcon} alt={cardDetail.type} className="w-5 h-5 rounded-full object-cover" />}
             {cardDetail.type}
