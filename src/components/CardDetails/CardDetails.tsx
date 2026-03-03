@@ -51,7 +51,7 @@ export default function CardDetails({ cardDetail }: CardDetailsProps) {
     <aside className="lg:col-span-4">
       <div className="bg-white rounded-2xl shadow-sm p-6 sticky top-6">
         <div className="mx-auto bg-gray-200 rounded-lg mb-6 shadow-inner">
-          <img src="https://asia.pokemon-card.com/id/archive/special/card/sv8a/assets/images/card/hero-card-6.png" />
+          <img src={cardDetail.imageUrl} alt={cardDetail.name} />
         </div>
         <h2 className="text-xl font-bold text-center mb-1">{cardDetail.name}</h2>
         <div className="text-center mb-6 mt-4">
