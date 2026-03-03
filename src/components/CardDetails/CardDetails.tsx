@@ -1,15 +1,15 @@
 import { CardDetailsProps } from "./CardDetails.types";
 
-import darkIcon from "../../assets/icons/dark-icon.png";
-import dragonIcon from "../../assets/icons/dragon-icon.png";
-import fightingIcon from "../../assets/icons/fighting-icon.png";
-import fireIcon from "../../assets/icons/fire-icon.png";
-import grassIcon from "../../assets/icons/grass-icon.svg";
-import lightningIcon from "../../assets/icons/lightning-icon.png";
-import normalIcon from "../../assets/icons/normal-icon.png";
-import psychicIcon from "../../assets/icons/phsycic-icon.png";
-import steelIcon from "../../assets/icons/steel-icon.png";
-import waterIcon from "../../assets/icons/water-icon.png";
+import darkIcon from "@/assets/icons/dark-icon.png";
+import dragonIcon from "@/assets/icons/dragon-icon.png";
+import fightingIcon from "@/assets/icons/fighting-icon.png";
+import fireIcon from "@/assets/icons/fire-icon.png";
+import grassIcon from "@/assets/icons/grass-icon.svg";
+import lightningIcon from "@/assets/icons/lightning-icon.png";
+import normalIcon from "@/assets/icons/normal-icon.png";
+import psychicIcon from "@/assets/icons/phsycic-icon.png";
+import steelIcon from "@/assets/icons/steel-icon.png";
+import waterIcon from "@/assets/icons/water-icon.png";
 
 const typeIconMap: Record<string, string> = {
   dark: darkIcon,
