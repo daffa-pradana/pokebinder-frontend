@@ -1,6 +1,52 @@
 import { CardDetailsProps } from "./CardDetails.types";
 
+import darkIcon from "../../assets/icons/dark-icon.png";
+import dragonIcon from "../../assets/icons/dragon-icon.png";
+import fightingIcon from "../../assets/icons/fighting-icon.png";
+import fireIcon from "../../assets/icons/fire-icon.png";
+import grassIcon from "../../assets/icons/grass-icon.svg";
+import lightningIcon from "../../assets/icons/lightning-icon.png";
+import normalIcon from "../../assets/icons/normal-icon.png";
+import psychicIcon from "../../assets/icons/phsycic-icon.png";
+import steelIcon from "../../assets/icons/steel-icon.png";
+import waterIcon from "../../assets/icons/water-icon.png";
+
+const typeIconMap: Record<string, string> = {
+  dark: darkIcon,
+  dragon: dragonIcon,
+  fighting: fightingIcon,
+  fire: fireIcon,
+  grass: grassIcon,
+  lightning: lightningIcon,
+  normal: normalIcon,
+  psychic: psychicIcon,
+  steel: steelIcon,
+  water: waterIcon,
+};
+
+const typeColorMap: Record<string, string> = {
+  dark: "#374151",
+  dragon: "#4F46E5",
+  fighting: "#DC2626",
+  fire: "#EA580C",
+  grass: "#16A34A",
+  lightning: "#CA8A04",
+  normal: "#6B7280",
+  psychic: "#DB2777",
+  steel: "#475569",
+  water: "#2563EB",
+};
+
 export default function CardDetails({ cardDetail }: CardDetailsProps) {
+  const typeKey = cardDetail.type.toLowerCase();
+  const typeIcon = typeIconMap[typeKey];
+  const typeColor = typeColorMap[typeKey] ?? "#374151";
+  const typeBadgeStyle = {
+    border: `1.5px solid ${typeColor}`,
+    backgroundColor: `${typeColor}26`,
+    color: typeColor,
+  };
+
   return (
     <aside className="lg:col-span-4">
       <div className="bg-white rounded-2xl shadow-sm p-6 sticky top-6">
@@ -9,7 +55,10 @@ export default function CardDetails({ cardDetail }: CardDetailsProps) {
         </div>
         <h2 className="text-xl font-bold text-center mb-1">{cardDetail.name}</h2>
         <div className="text-center mb-6">
-          <span className="px-3 py-1 bg-gray-800 text-white text-xs rounded-full">{cardDetail.type}</span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 text-sm rounded-xl" style={typeBadgeStyle}>
+            {typeIcon && <img src={typeIcon} alt={cardDetail.type} className="w-5 h-5 rounded-full object-cover" />}
+            {cardDetail.type}
+          </span>
         </div>
 
         <div className="space-y-3 text-sm">
