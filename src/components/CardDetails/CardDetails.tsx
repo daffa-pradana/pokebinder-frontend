@@ -1,14 +1,15 @@
+import { useMemo } from "react";
 import { CardDetailsProps } from "./CardDetails.types";
 import { POKEMON_TYPE_ICONS, POKEMON_TYPE_COLORS } from "@/constants/pokemonTypes";
 
 export default function CardDetails({ cardDetail }: CardDetailsProps) {
   const typeIcon = POKEMON_TYPE_ICONS[cardDetail.type];
   const typeColor = POKEMON_TYPE_COLORS[cardDetail.type];
-  const typeBadgeStyle = {
+  const typeBadgeStyle = useMemo(() => ({
     border: `1.5px solid ${typeColor}`,
     backgroundColor: `${typeColor}26`,
     color: typeColor,
-  };
+  }), [typeColor]);
 
   return (
     <aside className="lg:col-span-4">
