@@ -60,7 +60,7 @@ export default function CardDetails({ cardDetail }: CardDetailsProps) {
               <div key={label} className="flex items-center gap-4">
                 <span className="font-semibold text-gray-700 w-32 shrink-0">{label}</span>
                 <span className="flex-1 bg-white border border-gray-200 rounded-xl px-3 py-2 text-gray-600 shadow-inner">
-                  $ {value}
+                  {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value)}
                 </span>
               </div>
             ))}
