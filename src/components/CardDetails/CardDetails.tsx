@@ -2,9 +2,8 @@ import { CardDetailsProps } from "./CardDetails.types";
 import { POKEMON_TYPE_ICONS, POKEMON_TYPE_COLORS } from "@/constants/pokemonTypes";
 
 export default function CardDetails({ cardDetail }: CardDetailsProps) {
-  const typeKey = cardDetail.type.toLowerCase();
-  const typeIcon = POKEMON_TYPE_ICONS[typeKey];
-  const typeColor = POKEMON_TYPE_COLORS[typeKey] ?? "#374151";
+  const typeIcon = POKEMON_TYPE_ICONS[cardDetail.type];
+  const typeColor = POKEMON_TYPE_COLORS[cardDetail.type];
   const typeBadgeStyle = {
     border: `1.5px solid ${typeColor}`,
     backgroundColor: `${typeColor}26`,

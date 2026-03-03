@@ -47,13 +47,13 @@ describe("CardDetails", () => {
     const anotherCard: PokemonCardDetail = {
       ...mockCard,
       name: "Pikachu V",
-      type: "Electric",
+      type: "Lightning",
       illustrator: "Ken Sugimori",
       cardNo: "25/25",
     };
     render(<CardDetails cardDetail={anotherCard} />);
     expect(screen.getByText("Pikachu V")).toBeInTheDocument();
-    expect(screen.getByText("Electric")).toBeInTheDocument();
+    expect(screen.getByText("Lightning")).toBeInTheDocument();
     expect(screen.getByText("Ken Sugimori")).toBeInTheDocument();
     expect(screen.getByText("25/25")).toBeInTheDocument();
   });

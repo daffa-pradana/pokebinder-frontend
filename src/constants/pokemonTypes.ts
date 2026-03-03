@@ -9,28 +9,30 @@ import psychicIcon from "@/assets/icons/phsycic-icon.png";
 import steelIcon from "@/assets/icons/steel-icon.png";
 import waterIcon from "@/assets/icons/water-icon.png";
 
-export const POKEMON_TYPE_ICONS: Record<string, string> = {
-  dark: darkIcon,
-  dragon: dragonIcon,
-  fighting: fightingIcon,
-  fire: fireIcon,
-  grass: grassIcon,
-  lightning: lightningIcon,
-  normal: normalIcon,
-  psychic: psychicIcon,
-  steel: steelIcon,
-  water: waterIcon,
+import { PokemonType } from "@/types/pokemoncarddetail";
+
+export const POKEMON_TYPE_ICONS: Record<PokemonType, string> = {
+  Dark: darkIcon,
+  Dragon: dragonIcon,
+  Fighting: fightingIcon,
+  Fire: fireIcon,
+  Grass: grassIcon,
+  Lightning: lightningIcon,
+  Normal: normalIcon,
+  Psychic: psychicIcon,
+  Steel: steelIcon,
+  Water: waterIcon,
 };
 
-export const POKEMON_TYPE_COLORS: Record<string, string> = {
-  dark: "#374151",
-  dragon: "#4F46E5",
-  fighting: "#DC2626",
-  fire: "#EA580C",
-  grass: "#16A34A",
-  lightning: "#CA8A04",
-  normal: "#6B7280",
-  psychic: "#DB2777",
-  steel: "#475569",
-  water: "#2563EB",
+export const POKEMON_TYPE_COLORS: Record<PokemonType, string> = {
+  Dark: "#374151",
+  Dragon: "#4F46E5",
+  Fighting: "#DC2626",
+  Fire: "#EA580C",
+  Grass: "#16A34A",
+  Lightning: "#CA8A04",
+  Normal: "#6B7280",
+  Psychic: "#DB2777",
+  Steel: "#475569",
+  Water: "#2563EB",
 };
