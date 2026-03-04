@@ -19,16 +19,14 @@ describe("LoginPage", () => {
       expect(screen.getByAltText("PokéBinder")).toBeInTheDocument();
     });
 
-    it("renders the email input", () => {
+    it("renders the email input with an accessible label", () => {
       renderLoginPage();
-      expect(
-        screen.getByPlaceholderText("poketrainer@pokemon.jp")
-      ).toBeInTheDocument();
+      expect(screen.getByLabelText(/email address/i)).toBeInTheDocument();
     });
 
-    it("renders the password input", () => {
+    it("renders the password input with an accessible label", () => {
       renderLoginPage();
-      expect(screen.getByPlaceholderText("Password")).toBeInTheDocument();
+      expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
     });
 
     it("renders the Sign In submit button", () => {
@@ -66,19 +64,17 @@ describe("LoginPage", () => {
   describe("form input behaviour", () => {
     it("email input is empty by default", () => {
       renderLoginPage();
-      expect(
-        screen.getByPlaceholderText("poketrainer@pokemon.jp")
-      ).toHaveValue("");
+      expect(screen.getByLabelText(/email address/i)).toHaveValue("");
     });
 
     it("password input is empty by default", () => {
       renderLoginPage();
-      expect(screen.getByPlaceholderText("Password")).toHaveValue("");
+      expect(screen.getByLabelText(/password/i)).toHaveValue("");
     });
 
     it("updates the email field when the user types", () => {
       renderLoginPage();
-      const emailInput = screen.getByPlaceholderText("poketrainer@pokemon.jp");
+      const emailInput = screen.getByLabelText(/email address/i);
       fireEvent.change(emailInput, {
         target: { name: "email", value: "ash@pokemon.jp" },
       });
@@ -87,7 +83,7 @@ describe("LoginPage", () => {
 
     it("updates the password field when the user types", () => {
       renderLoginPage();
-      const passwordInput = screen.getByPlaceholderText("Password");
+      const passwordInput = screen.getByLabelText(/password/i);
       fireEvent.change(passwordInput, {
         target: { name: "password", value: "pikachu123" },
       });
@@ -96,7 +92,7 @@ describe("LoginPage", () => {
 
     it("password input has type='password' to mask the value", () => {
       renderLoginPage();
-      expect(screen.getByPlaceholderText("Password")).toHaveAttribute(
+      expect(screen.getByLabelText(/password/i)).toHaveAttribute(
         "type",
         "password"
       );
@@ -104,9 +100,10 @@ describe("LoginPage", () => {
 
     it("email input has type='email'", () => {
       renderLoginPage();
-      expect(
-        screen.getByPlaceholderText("poketrainer@pokemon.jp")
-      ).toHaveAttribute("type", "email");
+      expect(screen.getByLabelText(/email address/i)).toHaveAttribute(
+        "type",
+        "email"
+      );
     });
   });
 

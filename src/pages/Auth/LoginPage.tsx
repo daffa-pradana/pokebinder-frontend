@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import GoogleIcon from "@/assets/icons/google-icon.svg?react";
 import pokeballImg from "@/assets/images/grey-pokeball-img.svg";
 import pokebinderLogo from "@/assets/logo/pokebinder-logo.png";
-// TODO: Replace with a local asset (this Figma URL expires in 7 days)
-const GOOGLE_ICON_URL =
-  "https://www.figma.com/api/mcp/asset/7d2fc43a-488d-4022-b68a-31155d091921";
 
 interface SignInFormState {
   email: string;
@@ -58,7 +56,11 @@ export default function LoginPage() {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <label htmlFor="email" className="sr-only">
+              Email address
+            </label>
             <input
+              id="email"
               type="email"
               name="email"
               value={form.email}
@@ -67,7 +69,11 @@ export default function LoginPage() {
               required
               className="h-[50px] w-full rounded-[10px] border border-pokebinder-gray-dark bg-pokebinder-gray-light px-4 text-[12px] tracking-[-0.25px] text-pokebinder-navy-dark placeholder:text-pokebinder-gray-dark focus:border-pokebinder-red focus:outline-none"
             />
+            <label htmlFor="password" className="sr-only">
+              Password
+            </label>
             <input
+              id="password"
               type="password"
               name="password"
               value={form.password}
@@ -98,7 +104,7 @@ export default function LoginPage() {
             type="button"
             className="flex h-[50px] w-full cursor-pointer items-center justify-center gap-3 rounded-[10px] border border-pokebinder-gray-medium bg-pokebinder-gray-medium text-[14px] font-semibold tracking-[1px] transition-all hover:brightness-95"
           >
-            <img src={GOOGLE_ICON_URL} alt="Google" className="size-4" />
+            <GoogleIcon aria-hidden className="size-4" />
             Continue with Google
           </button>
 
