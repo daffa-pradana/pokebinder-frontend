@@ -27,26 +27,38 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen">
       {/* Left panel — branding */}
-      <div className="relative hidden overflow-hidden bg-gradient-to-b from-pokebinder-red to-pokebinder-red-dark lg:flex lg:w-[58%] lg:flex-col lg:justify-end lg:p-12">
+      <div
+        className="relative hidden overflow-hidden lg:flex lg:w-[56%] lg:flex-col"
+        style={{ background: "linear-gradient(to bottom, #C20001, #B40001)" }}
+      >
+        {/* Branding text — top-left */}
+        <div className="relative z-10 p-12">
+          <p className="text-[40px] font-medium leading-[1.6] tracking-wide text-white">
+            Welcome back,
+          </p>
+          <p className="text-[96px] font-bold leading-[1] tracking-wide text-white">
+            Collector
+          </p>
+        </div>
+
+        {/* Pokeball decoration — bottom-left */}
         <img
           src={pokeballImg}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute -bottom-40 -left-48 w-[788px] select-none opacity-20"
+          className="pointer-events-none absolute -bottom-36 -left-48 w-[788px] select-none opacity-20"
         />
-        <div className="relative z-10 pb-24">
-          <p className="text-[40px] font-medium leading-[100px] tracking-wide text-white">
-            Welcome back,
-          </p>
-          <p className="text-[96px] font-bold leading-[100px] tracking-wide text-white">
-            Collector
-          </p>
-        </div>
       </div>
 
       {/* Right panel — sign in form */}
-      <div className="flex flex-1 flex-col items-center justify-center bg-pokebinder-gray-light shadow-[-10px_0_40px_rgba(13,12,71,0.05)]">
-        <div className="w-full max-w-[268px] px-4 lg:px-0">
+      <div
+        className="flex flex-1 flex-col items-center justify-center"
+        style={{
+          backgroundColor: "#F6F8FC",
+          boxShadow: "-10px 0 40px rgba(13, 12, 71, 0.05)",
+        }}
+      >
+        <div className="w-full max-w-[268px] px-6 lg:px-0">
           {/* Logo */}
           <div className="mb-10 flex justify-center">
             <img src={pokebinderLogo} alt="PokéBinder" className="h-14 object-contain" />
@@ -61,7 +73,12 @@ export default function LoginPage() {
               onChange={handleChange}
               placeholder="poketrainer@pokemon.jp"
               required
-              className="h-[50px] w-full rounded-[10px] border border-pokebinder-gray-dark bg-pokebinder-gray-light px-4 text-[12px] tracking-[-0.25px] text-pokebinder-navy-dark placeholder:text-pokebinder-gray-dark focus:border-pokebinder-red focus:outline-none"
+              className="h-[50px] w-full rounded-[10px] px-4 text-[12px] tracking-[-0.25px] focus:outline-none"
+              style={{
+                border: "1px solid #B2B2C3",
+                backgroundColor: "#F6F8FC",
+                color: "#0E1A46",
+              }}
             />
             <input
               type="password"
@@ -70,11 +87,23 @@ export default function LoginPage() {
               onChange={handleChange}
               placeholder="Password"
               required
-              className="h-[50px] w-full rounded-[10px] border border-pokebinder-gray-dark bg-pokebinder-gray-light px-4 text-[12px] tracking-[-0.25px] text-pokebinder-navy-dark placeholder:text-pokebinder-gray-dark focus:border-pokebinder-red focus:outline-none"
+              className="h-[50px] w-full rounded-[10px] px-4 text-[12px] tracking-[-0.25px] focus:outline-none"
+              style={{
+                border: "1px solid #B2B2C3",
+                backgroundColor: "#F6F8FC",
+                color: "#0E1A46",
+              }}
             />
             <button
               type="submit"
-              className="mt-1 h-[50px] w-full rounded-[10px] bg-pokebinder-red text-[14px] font-semibold tracking-[1px] text-pokebinder-gray-light transition-colors hover:bg-pokebinder-red-dark"
+              className="mt-1 h-[50px] w-full rounded-[10px] text-[14px] font-semibold tracking-[1px] transition-colors"
+              style={{ backgroundColor: "#C20001", color: "#F6F8FC" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "#B40001")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor = "#C20001")
+              }
             >
               Sign In
             </button>
@@ -82,26 +111,40 @@ export default function LoginPage() {
 
           {/* OR divider */}
           <div className="my-6 flex items-center gap-3">
-            <div className="h-px flex-1 bg-pokebinder-gray-dark" />
-            <span className="text-[12px] font-medium tracking-[1px] text-pokebinder-gray-dark">
+            <div className="h-px flex-1" style={{ backgroundColor: "#B2B2C3" }} />
+            <span
+              className="text-[12px] font-medium tracking-[1px]"
+              style={{ color: "#B2B2C3" }}
+            >
               OR
             </span>
-            <div className="h-px flex-1 bg-pokebinder-gray-dark" />
+            <div className="h-px flex-1" style={{ backgroundColor: "#B2B2C3" }} />
           </div>
 
           {/* Google SSO */}
           <button
             type="button"
-            className="flex h-[50px] w-full items-center justify-center gap-3 rounded-[10px] border border-pokebinder-gray-medium bg-pokebinder-gray-medium text-[14px] font-semibold tracking-[1px] transition-all hover:brightness-95"
+            className="flex h-[50px] w-full items-center justify-center gap-3 rounded-[10px] text-[14px] font-semibold tracking-[1px] transition-all hover:brightness-95"
+            style={{
+              backgroundColor: "#EFF1F7",
+              border: "1px solid #EFF1F7",
+            }}
           >
             <img src={GOOGLE_ICON_URL} alt="Google" className="size-4" />
             Continue with Google
           </button>
 
           {/* Sign up link */}
-          <p className="mt-5 text-center text-[10px] tracking-[1px] text-pokebinder-gray-darker">
+          <p
+            className="mt-5 text-center text-[10px] tracking-[1px]"
+            style={{ color: "#7E8E9C" }}
+          >
             Dont have an account?{" "}
-            <Link to="/register" className="font-medium text-pokebinder-red underline">
+            <Link
+              to="/register"
+              className="font-medium underline"
+              style={{ color: "#C20001" }}
+            >
               Sign Up
             </Link>
           </p>
