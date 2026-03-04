@@ -96,7 +96,7 @@ export default function LoginPage() {
             />
             <button
               type="submit"
-              className="mt-1 h-[50px] w-full rounded-[10px] text-[14px] font-semibold tracking-[1px] transition-colors"
+              className="mt-1 h-[50px] w-full cursor-pointer rounded-[10px] text-[14px] font-semibold tracking-[1px] transition-colors"
               style={{ backgroundColor: "#C20001", color: "#F6F8FC" }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.backgroundColor = "#B40001")
@@ -124,7 +124,7 @@ export default function LoginPage() {
           {/* Google SSO */}
           <button
             type="button"
-            className="flex h-[50px] w-full items-center justify-center gap-3 rounded-[10px] text-[14px] font-semibold tracking-[1px] transition-all hover:brightness-95"
+            className="flex h-[50px] w-full cursor-pointer items-center justify-center gap-3 rounded-[10px] text-[14px] font-semibold tracking-[1px] transition-all hover:brightness-95"
             style={{
               backgroundColor: "#EFF1F7",
               border: "1px solid #EFF1F7",
